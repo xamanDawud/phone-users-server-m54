@@ -24,6 +24,8 @@ app.get("/users", (req, res) => {
 app.post("/users", (req, res) => {
   console.log("client data hitting");
   let newUser = req.body;
+  newUser.id = users.length + 1;
+  users.push(newUser);
   res.send(newUser);
 });
 
